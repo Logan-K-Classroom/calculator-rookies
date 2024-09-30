@@ -10,7 +10,7 @@ public class Addition {
 
 
         //Default output for result
-        double result = 0;
+        double result = firstNumber + secondNumber;
 
         System.out.print(result);
     }
