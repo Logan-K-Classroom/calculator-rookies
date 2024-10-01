@@ -23,7 +23,7 @@ jobs:
         input: |-
           16
           5
-        expected-output: '21'
+        expected-output: '21.0'
         comparison-method: exact
         timeout: 1
         max-score: 1
@@ -37,7 +37,7 @@ jobs:
         input: |-
           21
           10
-        expected-output: '11'
+        expected-output: '11.0'
         comparison-method: exact
         timeout: 1
         max-score: 1
@@ -51,7 +51,7 @@ jobs:
         input: |-
           5
           9
-        expected-output: '45'
+        expected-output: '45.0'
         comparison-method: exact
         timeout: 1
         max-score: 3
@@ -65,7 +65,7 @@ jobs:
         input: |-
           90
           10
-        expected-output: '9'
+        expected-output: '9.0'
         comparison-method: exact
         timeout: 1
         max-score: 3
@@ -79,7 +79,7 @@ jobs:
         input: |-
           4
           2
-        expected-output: '16'
+        expected-output: '16.0'
         comparison-method: exact
         timeout: 1
         max-score: 5
