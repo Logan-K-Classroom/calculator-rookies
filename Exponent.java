@@ -10,7 +10,7 @@ public class Exponent {
 
 
         //Default output for result
-        double result = 0;
+        double result = Math.pow(firstNumber, secondNumber);
 
         System.out.print(result);
     }
