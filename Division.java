@@ -6,6 +6,10 @@ public class Division {
         double firstNumber = AutoGraderInput.getFirstNumber();
         double secondNumber = AutoGraderInput.getSecondNumber();
 
-        
+        //Default output for result
+        double result = firstNumber / secondNumber;
+
+        System.out.print(result);
+
     }
 }

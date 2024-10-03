@@ -1,0 +1,95 @@
+name: Autograding Tests
+'on':
+- workflow_dispatch
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Test Addition
+      id: test-addition
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Test Addition
+        setup-command: javac Addition.java
+        command: java Addition
+        input: |-
+          16
+          5
+        expected-output: '21.0'
+        comparison-method: exact
+        timeout: 1
+        max-score: 1
+    - name: Test Subtraction
+      id: test-subtraction
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Test Subtraction
+        setup-command: javac Subtraction.java
+        command: java Subtraction
+        input: |-
+          21
+          10
+        expected-output: '11.0'
+        comparison-method: exact
+        timeout: 1
+        max-score: 1
+    - name: Test Multiplication
+      id: test-multiplication
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Test Multiplication
+        setup-command: javac Multiplication.java
+        command: java Multiplication
+        input: |-
+          5
+          9
+        expected-output: '45.0'
+        comparison-method: exact
+        timeout: 1
+        max-score: 3
+    - name: Test Division
+      id: test-division
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Test Division
+        setup-command: javac Division.java
+        command: java Division
+        input: |-
+          90
+          10
+        expected-output: '9.0'
+        comparison-method: exact
+        timeout: 1
+        max-score: 3
+    - name: Exponent
+      id: exponent
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Exponent
+        setup-command: javac Exponent.java
+        command: java Exponent
+        input: |-
+          4
+          2
+        expected-output: '16.0'
+        comparison-method: exact
+        timeout: 1
+        max-score: 5
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        TEST-ADDITION_RESULTS: "${{steps.test-addition.outputs.result}}"
+        TEST-SUBTRACTION_RESULTS: "${{steps.test-subtraction.outputs.result}}"
+        TEST-MULTIPLICATION_RESULTS: "${{steps.test-multiplication.outputs.result}}"
+        TEST-DIVISION_RESULTS: "${{steps.test-division.outputs.result}}"
+        EXPONENT_RESULTS: "${{steps.exponent.outputs.result}}"
+      with:
+        runners: test-addition,test-subtraction,test-multiplication,test-division,exponent

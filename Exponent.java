@@ -6,6 +6,9 @@ public class Exponent {
         double firstNumber = AutoGraderInput.getFirstNumber();
         double secondNumber = AutoGraderInput.getSecondNumber();
 
-        
+        //Default output for result
+        double result = Math.pow(firstNumber, secondNumber);
+
+        System.out.print(result);
     }
 }
