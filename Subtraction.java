@@ -5,6 +5,5 @@ public class Subtraction {
         double firstNumber = AutoGraderInput.getFirstNumber();
         double secondNumber = AutoGraderInput.getSecondNumber();
 
-
     }
 }

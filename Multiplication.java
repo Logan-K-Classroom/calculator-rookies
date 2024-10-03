@@ -5,6 +5,5 @@ public class Multiplication {
         double firstNumber = AutoGraderInput.getFirstNumber();
         double secondNumber = AutoGraderInput.getSecondNumber();
 
-
     }
 }
