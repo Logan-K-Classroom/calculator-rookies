@@ -5,5 +5,9 @@ public class Multiplication {
         double firstNumber = AutoGraderInput.getFirstNumber();
         double secondNumber = AutoGraderInput.getSecondNumber();
 
+        double mult = firstNumber * secondNumber;
+
+        System.out.print(mult);
+
     }
 }
