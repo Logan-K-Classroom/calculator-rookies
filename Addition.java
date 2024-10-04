@@ -5,5 +5,8 @@ public class Addition {
         double firstNumber = AutoGraderInput.getFirstNumber();
         double secondNumber = AutoGraderInput.getSecondNumber();
 
+        double sum = firstNumber + secondNumber; 
+
+        System.out.print(sum);
     }
 }
