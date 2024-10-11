@@ -6,7 +6,7 @@ public class Exponent {
 
         double result = Math.pow(firstNumber, secondNumber);
 
-        System.out.print(result);
+        System.out.println(result);
 
     }
 }
