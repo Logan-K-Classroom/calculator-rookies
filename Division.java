@@ -8,7 +8,7 @@ public class Division {
         // Defines a double variable that takes the variable firstNumber and divides it by the variable secondNumber
         double quotient = firstNumber / secondNumber;
         
-        //This function prints the value quotient to the console(´・ω・)シ
+        //This function prints the value quotient to the console
         System.out.print(quotient);
     }
 }
